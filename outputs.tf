@@ -1,10 +1,10 @@
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = aws_instance.tssr-terraform-01.id
+  value       = aws_instance.tssr-terraform.*.id
 }
 
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
-  value       = aws_instance.tssr-terraform-01.public_ip
+  value       = aws_instance.tssr-terraform.*.public_ip
 }
 
