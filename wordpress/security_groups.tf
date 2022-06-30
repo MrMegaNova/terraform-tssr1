@@ -46,7 +46,7 @@ resource "aws_security_group" "tssr_allow_ssh_sql" {
   }
 
   ingress {
-    description      = "HTTP from everywhere"
+    description      = "SQL from everywhere"
     from_port        = 3306
     to_port          = 3306
     protocol         = "tcp"

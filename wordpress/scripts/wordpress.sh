@@ -1,11 +1,11 @@
-sudo apt -q update
-sudo apt -q full-upgrade -y
-sudo apt -q install apache2 php php-{common,mysql,xml,xmlrpc,curl,gd,imagick,cli,dev,imap,mbstring,opcache,soap,zip,intl} wget unzip -y
+sudo apt -qq update
+sudo DEBIAN_FRONTEND=noninteractive apt -qq full-upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt -qq install apache2 php php-{common,mysql,xml,xmlrpc,curl,gd,imagick,cli,dev,imap,mbstring,opcache,soap,zip,intl} wget unzip -y
 wget https://wordpress.org/latest.zip
 unzip latest.zip
-sudo mv wordpress/ /var/www/html/
-sudo chown www-data:www-data -R /var/www/html/wordpress/
-sudo chmod -R 755 /var/www/html/wordpress/
+sudo mv wordpress/ /var/www/
+sudo chown www-data:www-data -R /var/www/wordpress/
+sudo chmod -R 755 /var/www/wordpress/
 sudo echo "<VirtualHost *:80>
 
 
@@ -14,7 +14,7 @@ ServerAdmin contact@konexio.eu
 
 
 
-DocumentRoot /var/www/html/wordrpess
+DocumentRoot /var/www/wordrpess
 
 ServerName example.com
 
@@ -22,7 +22,7 @@ ServerAlias www.example.com
 
 
 
-<Directory /var/www/html/wordpress/>
+<Directory /var/www/wordpress/>
 
 
 
